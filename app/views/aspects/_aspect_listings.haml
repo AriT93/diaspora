@@ -3,13 +3,13 @@
 -#   the COPYRIGHT file.
 
 %dl#aspect_nav
-  %dt.all_aspects
-    .root_element= link_to t('aspects.index.your_aspects'), aspects_path
+  %dt
+    = link_to t('aspects.index.your_aspects'), aspects_path
 
-  - if defined?(stream)
-    %dd
-      %a.toggle_selector{:href => '#'}
-        = stream.for_all_aspects? ? t('.deselect_all') : t('.select_all')
+  /- if defined?(stream)
+  /  %dd
+  /    %a.toggle_selector{:href => '#'}
+  /      = stream.for_all_aspects? ? t('.deselect_all') : t('.select_all')
 
   - for aspect in all_aspects
     %dd{:data => {:aspect_id => aspect.id}, :class => ("active" if defined?(stream) && stream.aspect_ids.include?(aspect.id))}

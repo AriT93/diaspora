@@ -25,7 +25,7 @@
     = person_image_link(post.author, :size => :thumb_small)
     .content
       %div.post_initial_info
-        %h5.from
+        .from
           = person_link(post.author, :class => 'hovercardable')
           %time.time.timeago{:datetime => post.created_at, :integer => time_for_sort(post).to_i}
 
